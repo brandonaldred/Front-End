@@ -69,12 +69,11 @@ input:not(:checked) ~ h2 {
     font-weight: 700;
 }
 
-input:not(:checked) ~ i::after {
+input:not(:checked) ~ i {
     transform: rotate(180deg);
 }
 
-li i::after {
-    content: "";
+li i {
     width: 12px;
     height: 12px;
     background-image: url('../images/icon-arrow-down.svg');
