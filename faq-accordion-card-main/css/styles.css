@@ -157,7 +157,6 @@ li {
         justify-content: flex-end;
         align-content: center;
         flex-wrap: wrap;
-        padding-right: 100px;
     }
 
     div:nth-child(1)::before {
@@ -169,7 +168,7 @@ li {
         background-repeat: no-repeat;
         background-size: 500px;
         position: absolute;
-        background-position-x: -30px;
+        background-position-x: -120px;
         overflow: hidden;
     }
 
@@ -196,17 +195,17 @@ li {
     }
 
     h1 {
-        width: 60%;
-        padding-left: 80px;
+        width: 50%;
         margin-bottom: 30px;
+        margin-right: 50px;
         line-height: 1.5em;
     }
 
     ul {
         width: 50%;
         position: relative;
-        margin-left: -10px;
         padding: 0;
+        margin-right: 50px;
     }
 
 
