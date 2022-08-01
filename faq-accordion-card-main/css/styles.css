@@ -40,6 +40,10 @@ h2 {
     z-index: 99;
 }
 
+ul {
+    height: 300px;
+}
+
 li {
     position: relative;
     list-style: none;
