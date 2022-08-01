@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Kumbh+Sans:wght@400;700&display=swap');
+
+:root {
+    --cream: hsl(27, 66%, 92%);
+    --pale-orange: hsl(33, 100%, 98%);
+    --medium-brown: hsl(28, 10%, 53%);
+    --dark-brown: hsl(25, 47%, 15%);
+    --soft-red: hsl(10, 79%, 65%);
+    --cyan: hsl(186, 34%, 60%);
+    --mobile-width: 345px;
+    --corners: 8px;
+    --padding: 20px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--cream);
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 30px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 18px;
+    line-height: 1.5em;
+    color: var(--dark-brown);
+}
+
+.bold {
+    font-weight: 700;
+    color: var(--dark-brown);
+}
+
+.large {
+    font-size: 2em;
+    color: var(--dark-brown);
+}
+
+#head {
+    background: var(--soft-red);
+    color: var(--pale-orange);
+    width: var(--mobile-width);
+    height: 95px;
+    border-radius: var(--corners);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: center;
+    padding: var(--padding);
+    background-image: url('../images/logo.svg');
+    background-repeat: no-repeat;
+    background-position: center right;
+    background-origin: content-box;
+}
+
+#head p {
+    width: 55%;
+}
+
+#body {
+    background: var(--pale-orange);
+    width: var(--mobile-width);
+    border-radius: var(--corners);
+    margin-top: 20px;
+    padding: var(--padding);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+
+#chart {
+    width: 100%;
+    height: 320px;
+    border-bottom: solid 1px var(--cream);
+    padding-bottom: var(--padding);
+    margin: var(--padding) 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+#chart p {
+    font-size: .8em;
+    color: var(--medium-brown);
+}
+
+.foot {
+    font-size: .8em;
+    color: var(--medium-brown);
+}
+
+.right {
+    text-align: right;
+}
+
+
+.medium-size {
+    font-size: 1.25em;
+    font-weight: 700;
+}
+
+.attribution {
+    display: none;
+}
