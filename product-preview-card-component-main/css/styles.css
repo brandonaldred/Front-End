@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Outfit:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Montserrat:wght@500;700&family=Outfit:wght@400;700&display=swap');
+
+:root {
+    --dark-blue: hsl(212, 21%, 14%);
+    --cyan: hsl(158, 36%, 37%);
+    --cream: hsl(30, 38%, 92%);
+    --gray: hsl(228, 12%, 48%);
+    --white: hsl(0, 0%, 100%);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.attribution {
+    display: none;
+}
+
+body {
+   font-family: 'Montserrat', sans-serif;
+   font-size: 14px;
+   color: var(--gray);
+   background: var(--cream);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 100vw;
+   height: 100vh;
+}
+
+h3 {
+    font-size: .8em;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: .8em;
+}
+
+h1 {
+    font-family: 'Fraunces', serif;
+    color: var(--dark-blue);
+    font-size: 2.25em;
+    line-height: 1.25em;
+    margin: 10px 0;
+}
+
+h2 {
+    color: var(--cyan);
+    display: inline;
+    vertical-align: middle;
+    font-family: 'Fraunces', serif;
+    font-size: 2.25em;
+}
+
+p{
+    line-height: 1.5em;
+    margin-bottom: 20px;
+}
+
+.was-price {
+    display: inline;
+    vertical-align: middle;
+    margin-left: 25px;
+    text-decoration: line-through;
+}
+
+button {
+    background-color: var(--cyan);
+    border: 0;
+    color: var(--white);
+    width: 100%;
+    height: 50px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 1.1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+}
+
+button::before {
+    content: '';
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background-image: url('../images/icon-cart.svg');
+    background-size: cover;
+    background-position: center center;
+    margin-right: 10px;
+}
+
+div:nth-child(1) {
+    margin: auto;
+    width: 345px;
+    background: var(--white);
+    border-radius: 8px;
+    padding: 265px 25px 25px;
+    background-image: url('../images/image-product-mobile.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
