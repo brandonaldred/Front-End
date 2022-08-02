@@ -127,7 +127,7 @@ body {
     color: var(--pale-orange);
     position: absolute;
     top: 0;
-    left: -60%;
+    left: -55%;
     padding: 10px;
     border-radius: var(--corners);
     display: flex;
