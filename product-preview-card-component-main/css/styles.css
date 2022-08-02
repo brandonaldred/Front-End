@@ -92,13 +92,36 @@ button::before {
     margin-right: 10px;
 }
 
+button:hover {
+    cursor: pointer;
+    background-color: hsla(156, 42%, 18%, 1);
+}
+
 div:nth-child(1) {
     margin: auto;
     width: 345px;
-    background: var(--white);
-    border-radius: 8px;
-    padding: 265px 25px 25px;
+    padding: 25px;
     background-image: url('../images/image-product-mobile.jpg');
     background-size: contain;
     background-repeat: no-repeat;
+    background-color: var(--white);
+    border-radius: 8px;
+}
+
+@media(max-width: 600px) {
+    div:nth-child(1) {
+        padding-top: 265px;
+    }
+}
+
+@media(min-width: 605px) {
+    div:nth-child(1) {
+        width: 600px;
+        height: 450px;
+        background-image: url('../images/image-product-desktop.jpg');
+        padding: 35px;
+        padding-left: 325px;
+        display: flex;
+        flex-wrap: wrap;
+    }
 }
