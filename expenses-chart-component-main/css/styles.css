@@ -82,12 +82,61 @@ body {
     margin: var(--padding) 0;
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: baseline;
+    position: relative;
 }
 
 #chart p {
     font-size: .8em;
     color: var(--medium-brown);
+}
+
+.bar-container {
+    text-align: center;
+    width: 10%;
+    height: 98%;
+    padding-top: 40px;
+    padding-bottom: var(--padding);
+    position: inherit;
+    vertical-align: bottom;
+}
+
+.bar {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.bar:hover {
+    filter: brightness(120%);
+    cursor: pointer;
+}
+
+.red {
+    background-color: var(--soft-red);
+}
+
+.blue {
+    background-color: var(--cyan);
+}
+
+.amount {
+    font-size: .75em;
+    font-weight: 700;
+    height: 35px;
+    background: var(--dark-brown);
+    color: var(--pale-orange);
+    position: absolute;
+    top: 0;
+    left: -60%;
+    padding: 10px;
+    border-radius: var(--corners);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hide {
+    display: none;
 }
 
 .foot {
@@ -97,6 +146,8 @@ body {
 
 .right {
     text-align: right;
+    line-height: 1em;
+    align-self: flex-end;
 }
 
 
@@ -107,4 +158,10 @@ body {
 
 .attribution {
     display: none;
+}
+
+@media (max-width: 768px) {
+    #container {
+        width: 350px;
+    }
 }
