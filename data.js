@@ -1,7 +1,7 @@
 const projects = [
     {
         name: 'QR Code Component',
-        url: 'qr-code-component-main/',
+        url: 'qr-code-component-main',
         skills: ['HTML', 'CSS'],
     },
     {
