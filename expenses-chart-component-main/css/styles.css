@@ -8,8 +8,10 @@
     --soft-red: hsl(10, 79%, 65%);
     --cyan: hsl(186, 34%, 60%);
     --mobile-width: 345px;
+    --desktop-width: 540px;
     --corners: 8px;
-    --padding: 20px;
+    --padding-mobile: 20px;
+    --padding-desktop: 40px;
 }
 
 * {
@@ -20,15 +22,15 @@
 
 body {
     background: var(--cream);
-    margin: auto;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    padding: 30px;
     font-family: 'DM Sans', sans-serif;
     font-size: 18px;
     line-height: 1.5em;
     color: var(--dark-brown);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
 }
 
 .bold {
@@ -51,7 +53,7 @@ body {
     flex-wrap: wrap;
     justify-content: flex-start;
     align-content: center;
-    padding: var(--padding);
+    padding: var(--padding-mobile);
     background-image: url('../images/logo.svg');
     background-repeat: no-repeat;
     background-position: center right;
@@ -67,7 +69,7 @@ body {
     width: var(--mobile-width);
     border-radius: var(--corners);
     margin-top: 20px;
-    padding: var(--padding);
+    padding: var(--padding-mobile);
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -78,8 +80,8 @@ body {
     width: 100%;
     height: 320px;
     border-bottom: solid 1px var(--cream);
-    padding-bottom: var(--padding);
-    margin: var(--padding) 0;
+    padding-bottom: var(--padding-mobile);
+    margin: var(--padding-mobile) 0;
     display: flex;
     justify-content: space-between;
     align-items: baseline;
@@ -94,9 +96,9 @@ body {
 .bar-container {
     text-align: center;
     width: 10%;
-    height: 98%;
+    height: 100%;
     padding-top: 40px;
-    padding-bottom: var(--padding);
+    padding-bottom: var(--padding-mobile);
     position: inherit;
     vertical-align: bottom;
 }
@@ -122,17 +124,19 @@ body {
 .amount {
     font-size: .75em;
     font-weight: 700;
+    width: 55px;
     height: 35px;
     background: var(--dark-brown);
     color: var(--pale-orange);
     position: absolute;
     top: 0;
-    left: -55%;
+    left: -40%;
     padding: 10px;
     border-radius: var(--corners);
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 99;
 }
 
 .hide {
@@ -160,8 +164,25 @@ body {
     display: none;
 }
 
-@media (max-width: 768px) {
-    #container {
-        width: 350px;
+#container {
+
+}
+
+
+@media (min-width: 601px) {
+    #head {
+        width: var(--desktop-width);
+        padding: var(--padding-desktop);
+    }
+
+    #body {
+        width: var(--desktop-width);
+        padding: var(--padding-desktop);
+    }
+
+    .amount {
+        left: -25%;
+        width: 70px;
+        height: 35px;
     }
 }
