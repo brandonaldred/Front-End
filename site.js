@@ -3,7 +3,7 @@ function buildCard(item) {
     card.className = 'card';
 
     const img = document.createElement('img');
-    img.setAttribute('src', `/${item.url}/design/desktop-preview.jpg`);
+    img.setAttribute('src', `${item.url}/design/desktop-preview.jpg`);
 
     const skillsContainer = document.createElement('div');
     skillsContainer.className = 'skills';
