@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap');
+
+:root {
+    --blue: hsl(246, 80%, 60%);
+    --work:  hsl(15, 100%, 70%);
+    --play:  hsl(195, 74%, 62%);
+    --study: hsl(348, 100%, 68%);
+    --exercise: hsl(145, 58%, 55%);
+    --social: hsl(264, 64%, 52%);
+    --self: hsl(43, 84%, 65%);
+
+    --v-d-blue: hsl(226, 43%, 10%);
+    --d-blue: hsl(235, 46%, 20%);
+    --g-blue: hsl(235, 45%, 61%);
+    --p-blue: hsl(236, 100%, 87%);
+
+    --title-size: 18px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Rubik', sans-serif;
+    background-color: var(--v-d-blue);
+    color: #ffffff;
+}
+
+.card {
+    background: var(--d-blue);
+    border-radius: 10px;
+    padding: 20px;
+    position: relative;
+}
+
+h1 {
+    font-weight: 300;
+}
+
+h2 {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+h3 {
+    font-weight: 300;
+    color: var(--p-blue);
+    font-size: 1em;
+}
+
+/* - Mobile: 375px - Desktop: 1440px */
+
+#container {
+    width: 375px;
+    height: auto;
+    margin: auto;
+    display: grid;
+    grid-column: 1fr;
+    grid-row: repeat(1fr);
+    grid-row-gap: 25px;
+}
+
+.name {
+    background: var(--blue);
+    position: inherit;
+    top: 0;
+    left: 0;
+    width: auto;
+    padding: 25px;
+    border-radius: 10px;
+    margin: -20px -20px 0;
+}
+
+ul {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
+    }
+
+li {
+    display: inline-block;
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--g-blue);
+}
+
+li:hover {
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.attribution {
+    display: none;
+}
+
+@media (min-width: 1110px) {
+    #container {
+        width: 1110px;
+    }
+}
