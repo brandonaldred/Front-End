@@ -1,4 +1,4 @@
-[
+const data = [
   {
     "title": "Work",
     "timeframes": {

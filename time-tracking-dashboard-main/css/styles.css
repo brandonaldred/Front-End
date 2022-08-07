@@ -89,7 +89,7 @@ body {
     background-image: url('../images/icon-social.svg');
 }
 
-.self::before {
+.self-care::before {
     background-color: var(--self);
     background-image: url('../images/icon-self-care.svg');
 }
