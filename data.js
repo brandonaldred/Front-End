@@ -19,5 +19,10 @@ const projects = [
         url: 'expenses-chart-component-main',
         skills: ['HTML', 'CSS', 'JS'],
     },
+    {
+        name: 'Time Tracking Dashboard',
+        url: 'time-tracking-dashboard-main',
+        skills: ['HTML', 'CSS', 'JS'],
+    },
     
 ];
