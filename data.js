@@ -24,5 +24,10 @@ const projects = [
         url: 'time-tracking-dashboard-main',
         skills: ['HTML', 'CSS', 'JS'],
     },
+    {
+        name: 'eCommerce Product Page',
+        url: 'ecommerce-product-page-main',
+        skills: ['HTML', 'CSS', 'JS'],
+    },
     
 ];
