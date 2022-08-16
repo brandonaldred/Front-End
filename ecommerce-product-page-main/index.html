@@ -30,7 +30,7 @@
       <a class="main-logo" href="#"><img src="images/logo.svg" alt="Sneakers" /></a>
       <nav class="mobile-menu">
         <ul>
-          <li><img src="images/icon-menu.svg" alt="Menu Icon"/></li>
+          <li><img src="images/icon-menu.svg" alt="Menu Icon" /></li>
           <li><a href="#">Collections</a></li>
           <li><a href="#">Men</a></li>
           <li><a href="#">Women</a></li>
@@ -39,27 +39,33 @@
         </ul>
       </nav>
       <a class="shopping-cart" data-items="3" href="#"><img src="images/icon-cart.svg" alt="Shopping Cart" /></a>
-      <a href="#"><img class="avatar" src="images/image-avatar.png" alt="Account" /></a>
+      <a class="avatar" href="#"><img src="images/image-avatar.png" alt="Account" /></a>
     </div>
   </header>
   <div class="menu-open"></div>
   <main>
-    <div>
-      <img src="images/image-product-1.jpg" alt="Product Photo" />
-      <img src="images/image-product-1-thumbnail.jpg" alt="Product Photo" />
-      <img src="images/image-product-2-thumbnail.jpg" alt="Product Photo" />
-      <img src="images/image-product-3-thumbnail.jpg" alt="Product Photo" />
-      <img src="images/image-product-4-thumbnail.jpg" alt="Product Photo" />
+    <div class="photo-container">
+      <div class="photo-scroll">
+        <button><img src="images/icon-previous.svg" /></button>
+        <button><img src="images/icon-next.svg" /></button>
+      </div>
+      <img class="main-photo" src="images/image-product-1.jpg" alt="Product Photo" />
+      <img class="thumbnail-photo" src="images/image-product-1-thumbnail.jpg" alt="Product Photo" />
+      <img class="thumbnail-photo" src="images/image-product-2-thumbnail.jpg" alt="Product Photo" />
+      <img class="thumbnail-photo" src="images/image-product-3-thumbnail.jpg" alt="Product Photo" />
+      <img class="thumbnail-photo" src="images/image-product-4-thumbnail.jpg" alt="Product Photo" />
     </div>
-    <div>
+    <div class="content">
       <h2>Sneaker Company</h2>
       <h1>Fall Limited Edition Sneakers</h1>
-      <p>These low-profile sneakers are your perfect casual wear companion. Featuring a
+      <p class="product-description">These low-profile sneakers are your perfect casual wear companion. Featuring a
         durable rubber outer sole, they’ll withstand everything the weather can offer.</p>
-      <p data-savings="50%">$125.00</p>
-      <p>$250.00</p>
-      <p><img src="images/icon-minus.svg" />0<img src="images/icon-plus.svg" /></p>
-      <button>Add to cart</button>
+      <div class="pricing">
+        <p class="price" data-savings="50%">$125.00</p>
+        <p class="previous-price">$250.00</p>
+      </div>
+      <p class="qty"><img src="images/icon-minus.svg" />0<img src="images/icon-plus.svg" /></p>
+      <button class="add-to-cart">Add to cart</button>
     </div>
   </main>
 
