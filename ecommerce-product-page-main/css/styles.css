@@ -208,7 +208,7 @@ h2 {
     }
 
     main {
-        padding-top: 85px;
+        padding-top: 30px;
         display: flex;
         justify-content: space-around;
     }
@@ -282,6 +282,11 @@ h2 {
 }
 
 @media (max-width: 1200px) {
+    body {
+        max-width: 600px;
+        margin: auto;
+    }
+
     header {
         position: sticky;
         top: 0;
@@ -316,6 +321,10 @@ h2 {
 
     main {
         width: 100%;
+    }
+
+    .photo-container {
+        overflow: hidden;
     }
 
     .pricing {
