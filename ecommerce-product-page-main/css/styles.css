@@ -263,6 +263,11 @@ h2 {
     .main-photo:hover {
         cursor: pointer;
     }
+    .product-thumbnails {
+        width: 100%;
+        display:flex;
+        justify-content: space-between;
+    }
 
     .thumbnail-photo {
         width: 20%;
@@ -270,7 +275,7 @@ h2 {
         border-radius: 8px;
     }
 
-    .thumbnail-photo:hover {
+    .thumbnail-photo:hover , .thumbnail-selected {
         cursor: pointer;
         outline: 3px solid var(--Orange);
         filter: opacity(70%);
@@ -325,6 +330,18 @@ h2 {
 
     .photo-container {
         overflow: hidden;
+        position: relative;
+        height: 500px;
+    }
+
+    .main-photo {
+        position: absolute;
+        left: 0;
+        height: auto;
+    }
+
+    .product-thumbnails {
+        display: none;
     }
 
     .pricing {
@@ -341,6 +358,7 @@ h2 {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        z-index: 99;
     }
 
     .photo-scroll button {
