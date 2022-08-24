@@ -32,6 +32,7 @@ header img {
 }
 
 main {
+    position: relative;
     max-width: 1115px;
     margin: auto;
 }
@@ -45,6 +46,7 @@ main {
     grid-template-columns: repeat(8, auto);
     grid-template-rows: auto;
     align-items: center;
+    position: relative;
 }
 
 
@@ -195,7 +197,136 @@ h2 {
     filter: opacity(70%);
 }
 
+
+.cart-contents {
+    position: absolute;
+    width: 90%;
+    top: 25px;
+    right: 5%;
+    border-radius: 8px;
+    background-color: var(--White);
+    z-index: 9999999;
+    box-shadow: 0px 35px 60px -30px var(--Black);
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+.cart-contents h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin: 25px;
+}
+
+.cart-items {
+    border-top: 1px solid var(--Grayish-Blue);
+    padding: 25px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.empty-cart-text {
+    color: var(--Dark-Grayish-Blue);
+    font-weight: 700;
+}
+
+.cart-item {
+    display: grid;
+    grid-template-columns: 60px 1fr 60px;
+}
+
+.cart-thumbnail {
+    border-radius: 8px;
+    width: 50px;
+    height: 50px;
+}
+
+.checkout {
+    margin: 25px auto;
+    background-color: var(--Orange);
+    color: var(--White);
+    font-weight: 700;
+    font-size: 16px;
+    width: 80%;
+    height: 60px;
+    border-radius: 8px;
+    border: none;
+}
+
 @media (min-width: 1201px) {
+
+    #lightbox {
+        height: 100vh;
+        width: 100vw;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: var(--Black);
+        z-index: 999;
+        display: none;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        padding: 100px;
+    }
+    
+    #lightbox img {
+        width: 570px;
+        border-radius: 10px;
+    }
+
+    #lightbox .product-thumbnails {
+        width: 570px;
+    }
+
+    #lightbox .product-thumbnails img {
+        width: 18%;
+    }
+
+    #lightbox .lightbox-close {
+        width: 100%;
+        text-align: right;
+        margin-bottom: 25px;
+    }
+
+    #lightbox .lightbox-close svg {
+        color: var(--Dark-Grayish-Blue);
+    }
+
+    #lightbox .lightbox-close svg:hover {
+        cursor: pointer;
+        color: var(--Orange);
+    }
+
+    #lightbox .photo-scroll {
+        width: 100%;
+        height: 100%;
+        padding: 25px;
+        position: absolute;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 99;
+    }
+
+    #lightbox .photo-scroll button {
+        background: var(--White);
+        width: 45px;
+        height: 45px;
+        border: none;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #lightbox .photo-scroll button:hover {
+        cursor: pointer;
+    }
+
     header {
         padding: 50px 0 85px;
     }
@@ -284,12 +415,22 @@ h2 {
     .previous-price {
         margin-top: 25px;
     }
+
+    .cart-contents {
+        width: 400px;
+        top: -100px;
+        right: 0;
+    }
 }
 
 @media (max-width: 1200px) {
     body {
         max-width: 600px;
         margin: auto;
+    }
+
+    #lightbox {
+        display: none;
     }
 
     header {
@@ -322,7 +463,7 @@ h2 {
 
     li:nth-child(n+2) {
         display: none;
-    }
+    } mark smalls
 
     main {
         width: 100%;
@@ -332,6 +473,7 @@ h2 {
         overflow: hidden;
         position: relative;
         height: 500px;
+        z-index: -1;
     }
 
     .main-photo {

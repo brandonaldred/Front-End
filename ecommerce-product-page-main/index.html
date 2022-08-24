@@ -25,6 +25,19 @@
 </head>
 
 <body>
+  <div id="lightbox">
+    <div class="lightbox-content">
+      <div class="lightbox-close">
+        <svg class="close-lightbox" width="14" height="15" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z"
+            fill="currentColor" fill-rule="evenodd" /></svg>
+      </div>
+      <div id="lightbox-photo-container">
+
+      </div>
+    </div>
+  </div>
   <header>
     <div class="masthead">
       <a class="main-logo" href="#"><img src="images/logo.svg" alt="Sneakers" /></a>
@@ -38,12 +51,29 @@
           <li><a href="#">Contact</a></li>
         </ul>
       </nav>
-      <a class="shopping-cart" data-items="3" href="#"><img src="images/icon-cart.svg" alt="Shopping Cart" /></a>
+      <a class="shopping-cart" data-items="0" href="#"><img src="images/icon-cart.svg" alt="Shopping Cart" /></a>
       <a class="avatar" href="#"><img src="images/image-avatar.png" alt="Account" /></a>
     </div>
   </header>
-  <div class="menu-open"></div>
+  <div class="menu-open">
+
+  </div>
   <main>
+    <div id="cart-contents" class="cart-contents">
+      <h3>Cart</h3>
+      <div class="cart-items">
+        <!-- <p class="empty-cart-text">Your cart is empty.</p> -->
+        <div class="cart-item">
+          <img data-product="product-1" class="cart-thumbnail" src="images/image-product-2-thumbnail.jpg"
+            alt="Product Photo" />
+            <p>Fall Limited Edition Sneakers</br>
+            $125.00 x 3 <b>$375</b></p>
+            <img class="cart-remove" src="images/icon-delete.svg"
+            alt="Remove from cart" />
+        </div>
+      </div>
+      <button class="checkout">Checkout</button>
+    </div>
     <div class="photo-container">
       <div class="photo-scroll">
         <button data-next="false"><img src="images/icon-previous.svg" /></button>
@@ -51,10 +81,14 @@
       </div>
       <img class="main-photo" data-photo="1" src="images/image-product-1.jpg" alt="Product Photo" />
       <div class="product-thumbnails">
-        <img data-product="product-1" class="thumbnail-photo" src="images/image-product-2-thumbnail.jpg" alt="Product Photo" />
-        <img data-product="product-2" class="thumbnail-photo" src="images/image-product-2-thumbnail.jpg" alt="Product Photo" />
-        <img data-product="product-3" class="thumbnail-photo" src="images/image-product-3-thumbnail.jpg" alt="Product Photo" />
-        <img data-product="product-4" class="thumbnail-photo" src="images/image-product-4-thumbnail.jpg" alt="Product Photo" />
+        <img data-product="product-1" class="thumbnail-photo" src="images/image-product-2-thumbnail.jpg"
+          alt="Product Photo" />
+        <img data-product="product-2" class="thumbnail-photo" src="images/image-product-2-thumbnail.jpg"
+          alt="Product Photo" />
+        <img data-product="product-3" class="thumbnail-photo" src="images/image-product-3-thumbnail.jpg"
+          alt="Product Photo" />
+        <img data-product="product-4" class="thumbnail-photo" src="images/image-product-4-thumbnail.jpg"
+          alt="Product Photo" />
       </div>
     </div>
     <div class="content">
@@ -66,7 +100,7 @@
         <p class="price" data-savings="50%">$125.00</p>
         <p class="previous-price">$250.00</p>
       </div>
-      <p class="qty"><img src="images/icon-minus.svg" />0<img src="images/icon-plus.svg" /></p>
+      <p class="qty"><img src="images/icon-minus.svg" />1<img src="images/icon-plus.svg" /></p>
       <button class="add-to-cart">Add to cart</button>
     </div>
   </main>
