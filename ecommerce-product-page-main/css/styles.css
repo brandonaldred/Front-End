@@ -280,6 +280,10 @@ b {
     right: 0;
 }
 
+.qty img:hover {
+    cursor: pointer;
+}
+
 @media (min-width: 1201px) {
 
     #lightbox {
