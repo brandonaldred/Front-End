@@ -85,9 +85,14 @@ function addCartItem(product, title, qty, price) {
                 let oldQuantity = item.dataset.qty;
                 qty = parseInt(qty) + parseInt(oldQuantity);
                 itemTitle.innerHTML = title + '</br>$' + price + ' x ' + qty + '<b> $' + (parseInt(qty) * parseInt(price)).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'); + '</b>';
+                item.dataset.qty = qty;
              }
         }
     }
+    document.querySelector('.shopping-cart').dataset.items = qty;
+    cartContents.className = 'cart-contents';
+    setTimeout(() => { 
+        cartContents.className = 'hide ' }, '1800');
 
 }
 
