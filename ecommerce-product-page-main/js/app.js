@@ -1,59 +1,40 @@
-//Photo Scrolling Selecting All Elements
-const productImages = document.querySelector('.product-thumbnails').querySelectorAll('IMG');
-const changeImg = document.querySelector('.photo-scroll').querySelectorAll('BUTTON');
-const mainPhoto = document.querySelector('.main-photo');
+/* Code to handle mobile menu*/
+const hamburger = document.querySelector('.closed');
+hamburger.addEventListener('click', (e) => { openMenu(e); });
+
+function openMenu(e) {
+    e.target.removeEventListener('click', openMenu);
+    const header = document.getElementsByTagName('HEADER');
+    header[0].insertAdjacentHTML('afterbegin', '<div id="menu-open"></div>');
+    const nav = document.getElementsByTagName('NAV');
+    nav[0].className = 'mobile-menu';
+    hamburger.src ="images/icon-close.svg";
+    hamburger.className ="open";
+    hamburger.addEventListener('click', () => { closeMenu(); });
+}
+
+function closeMenu() {
+    e.target.removeEventListener('click', closeMenu);
+    const bg = document.getElementById('menu-open');
+    const nav = document.getElementsByTagName('NAV');
+    nav[0].className = '';
+    document.querySelector('.open').src ="images/icon-menu.svg";
+    hamburger.addEventListener('click', (e) => { openMenu(e); });
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Code to handle cart pop up */
 const cartButton = document.querySelector('.shopping-cart');
 const cartContents = document.getElementById('cart-contents');
-const addToCart = document.querySelector('.add-to-cart')
-
-
-
-//Desktop Photo Selection
-for (image of productImages) {
-    image.addEventListener('click', (e) => {
-        mainPhoto.src = `images/image-${e.target.dataset.product}.jpg`;
-        for (image of productImages) {
-            image.classList.remove('thumbnail-selected');
-        }
-        e.target.classList.add('thumbnail-selected');
-    });
-
-}
-
-//Mobile Photo Scrolling
-for (let i = 0; i < changeImg.length; i++) {
-    changeImg[i].addEventListener('click', () => {
-        if (changeImg[i].dataset.next == 'true') {
-            if (parseInt(mainPhoto.dataset.photo) < productImages.length) {
-                mainPhoto.dataset.photo = parseInt(mainPhoto.dataset.photo) + 1;
-                mainPhoto.src = `images/image-product-${mainPhoto.dataset.photo}.jpg`;
-
-            }
-        } else {
-            if (parseInt(mainPhoto.dataset.photo) > 1) {
-                mainPhoto.dataset.photo = parseInt(mainPhoto.dataset.photo) - 1;
-                mainPhoto.src = `images/image-product-${mainPhoto.dataset.photo}.jpg`;
-            }
-        }
-    })
-}
-
-
-//Lightbox Elements
-const lightboxClose = document.querySelector('.close-lightbox');
-const lightboxPhotoContainer = document.getElementById('lightbox-photo-container');
-lightboxClose.addEventListener('click', () => {
-    document.getElementById('lightbox').style.display = 'none';
-    lightboxPhotoContainer.innerHTML = '';
-
-});
-
-mainPhoto.addEventListener('click', () => {
-    document.getElementById('lightbox').style.display = 'flex';
-    const photoContainer = document.querySelector('.photo-container');
-    lightboxPhotoContainer.appendChild(photoContainer.cloneNode(true));
-});
-
 
 //Hide or Show Shopping Cart
 cartButton.addEventListener('click', () => {
@@ -123,6 +104,63 @@ function buildCartItem (product, title, qty, price) {
     return cartItem;
 
 }
+
+/* E/O Code to handle cart pop up */
+
+
+//Photo Scrolling Selecting All Elements
+const productImages = document.querySelector('.product-thumbnails').querySelectorAll('IMG');
+const changeImg = document.querySelector('.photo-scroll').querySelectorAll('BUTTON');
+const mainPhoto = document.querySelector('.main-photo');
+const addToCart = document.querySelector('.add-to-cart')
+
+
+
+//Desktop Photo Selection
+for (image of productImages) {
+    image.addEventListener('click', (e) => {
+        mainPhoto.src = `images/image-${e.target.dataset.product}.jpg`;
+        for (image of productImages) {
+            image.classList.remove('thumbnail-selected');
+        }
+        e.target.classList.add('thumbnail-selected');
+    });
+
+}
+
+//Mobile Photo Scrolling
+for (let i = 0; i < changeImg.length; i++) {
+    changeImg[i].addEventListener('click', () => {
+        if (changeImg[i].dataset.next == 'true') {
+            if (parseInt(mainPhoto.dataset.photo) < productImages.length) {
+                mainPhoto.dataset.photo = parseInt(mainPhoto.dataset.photo) + 1;
+                mainPhoto.src = `images/image-product-${mainPhoto.dataset.photo}.jpg`;
+
+            }
+        } else {
+            if (parseInt(mainPhoto.dataset.photo) > 1) {
+                mainPhoto.dataset.photo = parseInt(mainPhoto.dataset.photo) - 1;
+                mainPhoto.src = `images/image-product-${mainPhoto.dataset.photo}.jpg`;
+            }
+        }
+    })
+}
+
+
+//Lightbox Elements
+const lightboxClose = document.querySelector('.close-lightbox');
+const lightboxPhotoContainer = document.getElementById('lightbox-photo-container');
+lightboxClose.addEventListener('click', () => {
+    document.getElementById('lightbox').style.display = 'none';
+    lightboxPhotoContainer.innerHTML = '';
+
+});
+
+mainPhoto.addEventListener('click', () => {
+    document.getElementById('lightbox').style.display = 'flex';
+    const photoContainer = document.querySelector('.photo-container');
+    lightboxPhotoContainer.appendChild(photoContainer.cloneNode(true));
+});
 
 addToCart.addEventListener('click', () => {
     const content = document.querySelector('.content');
