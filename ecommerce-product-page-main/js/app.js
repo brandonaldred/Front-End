@@ -1,25 +1,23 @@
 /* Code to handle mobile menu*/
 const hamburger = document.querySelector('.closed');
-hamburger.addEventListener('click', (e) => { openMenu(e); });
+hamburger.addEventListener('click', (e) => { menuOperation(e); });
 
-function openMenu(e) {
-    e.target.removeEventListener('click', openMenu);
-    const header = document.getElementsByTagName('HEADER');
-    header[0].insertAdjacentHTML('afterbegin', '<div id="menu-open"></div>');
-    const nav = document.getElementsByTagName('NAV');
-    nav[0].className = 'mobile-menu';
-    hamburger.src ="images/icon-close.svg";
-    hamburger.className ="open";
-    hamburger.addEventListener('click', () => { closeMenu(); });
-}
-
-function closeMenu() {
-    e.target.removeEventListener('click', closeMenu);
-    const bg = document.getElementById('menu-open');
-    const nav = document.getElementsByTagName('NAV');
-    nav[0].className = '';
-    document.querySelector('.open').src ="images/icon-menu.svg";
-    hamburger.addEventListener('click', (e) => { openMenu(e); });
+function menuOperation() {
+    if (document.getElementById('menu-open')) {
+        const nav = document.getElementsByTagName('NAV');
+        nav[0].className = '';
+        document.querySelector('.open').src ="images/icon-menu.svg";
+        const bg = document.getElementById('menu-open');
+        bg.remove();
+    } else {
+        const header = document.getElementsByTagName('HEADER');
+        header[0].insertAdjacentHTML('afterbegin', '<div id="menu-open"></div>');
+        const nav = document.getElementsByTagName('NAV');
+        nav[0].className = 'mobile-menu';
+        hamburger.src ="images/icon-close.svg";
+        hamburger.className ="open";
+        hamburger.addEventListener('click', (e) => { closeMenu(e, header[0]); });
+    }
 }
 
 
