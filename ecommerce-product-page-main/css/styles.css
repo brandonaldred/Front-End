@@ -505,7 +505,7 @@ b {
         background: black;
         width: 100%;
         height: 100vh;
-        position: absolute;
+        position: fixed;
         z-index: 100;
         opacity: .5;
     }
@@ -545,16 +545,18 @@ b {
         color: var(--Black);
     }
 
+    .main-hide {
+        z-index: -1;
+    }
+
     main {
         width: 100%;
-        z-index: -1;
     }
 
     .photo-container {
         overflow: hidden;
         position: relative;
         height: 500px;
-        z-index: -1;
     }
 
     .main-photo {
@@ -581,7 +583,7 @@ b {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        z-index: 99;
+        z-index: 999;
     }
 
     .photo-scroll button {
