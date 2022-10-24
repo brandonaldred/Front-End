@@ -21,24 +21,14 @@ function menuOperation() {
     }
 }
 
-
-
-
-
-
-
-
-
-
-
 /* Code to handle cart pop up */
 const cartButton = document.querySelector('.shopping-cart');
 const cartContents = document.getElementById('cart-contents');
+const addToCart = document.querySelector('.add-to-cart');
 
-//Hide or Show Shopping Cart
-cartButton.addEventListener('click', () => {
-    cartContents.className == 'hide' ? cartContents.className = 'cart-contents' : cartContents.className = 'hide';
-})
+//Hide or Show Shopping Cart 
+function showCart(e) { e.classList.toggle('hide'); }
+cartButton.addEventListener('click', () => { showCart(cartContents); });
 
 //Add Items to Shopping Cart (product, qty, img, price)
 function addCartItem(product, title, qty, price) {
@@ -70,11 +60,16 @@ function addCartItem(product, title, qty, price) {
         }
     }
     document.querySelector('.shopping-cart').dataset.items = qty;
-    cartContents.className = 'cart-contents';
-    setTimeout(() => { 
-        cartContents.className = 'hide ' }, '1800');
-
 }
+
+addToCart.addEventListener('click', () => {
+    showCart(cartContents);
+    const content = document.querySelector('.content');
+    const qty = document.querySelector('.qty').innerText;
+    addCartItem(content.dataset.sku, content.dataset.title, qty, content.dataset.price);
+    setTimeout(()=> { showCart(cartContents) }, 1500);
+});
+
 
 function buildCartItem (product, title, qty, price) {
     let cartItem = document.createElement('DIV');
@@ -111,7 +106,6 @@ function buildCartItem (product, title, qty, price) {
 const productImages = document.querySelector('.product-thumbnails').querySelectorAll('IMG');
 const changeImg = document.querySelector('.photo-scroll').querySelectorAll('BUTTON');
 const mainPhoto = document.querySelector('.main-photo');
-const addToCart = document.querySelector('.add-to-cart')
 
 
 
@@ -160,13 +154,6 @@ mainPhoto.addEventListener('click', () => {
     const photoContainer = document.querySelector('.photo-container');
     lightboxPhotoContainer.appendChild(photoContainer.cloneNode(true));
 });
-
-addToCart.addEventListener('click', () => {
-    const content = document.querySelector('.content');
-    const qty = document.querySelector('.qty').innerText;
-    addCartItem(content.dataset.sku, content.dataset.title, qty, content.dataset.price);
-});
-
 
 //adjust product qty
 const decreaseQty = document.querySelector('.sub-qty');
