@@ -127,15 +127,17 @@ for (let i = 0; i < changeImg.length; i++) {
         if (changeImg[i].dataset.next == 'true') {
             if (parseInt(mainPhoto.dataset.photo) < productImages.length) {
                 mainPhoto.dataset.photo = parseInt(mainPhoto.dataset.photo) + 1;
-                mainPhoto.src = `images/image-product-${mainPhoto.dataset.photo}.jpg`;
-
+            } else {
+                mainPhoto.dataset.photo = 1;
             }
         } else {
             if (parseInt(mainPhoto.dataset.photo) > 1) {
                 mainPhoto.dataset.photo = parseInt(mainPhoto.dataset.photo) - 1;
-                mainPhoto.src = `images/image-product-${mainPhoto.dataset.photo}.jpg`;
+            } else {
+                mainPhoto.dataset.photo = productImages.length;
             }
         }
+        mainPhoto.src = `images/image-product-${mainPhoto.dataset.photo}.jpg`;
     })
 }
 
