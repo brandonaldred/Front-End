@@ -124,7 +124,7 @@ for (image of productImages) {
 //Mobile Photo Scrolling
 for (let i = 0; i < changeImg.length; i++) {
     changeImg[i].addEventListener('click', () => {
-        if (changeImg[i].dataset.next == 'true') {
+        if (changeImg[i].dataset.next) {
             if (parseInt(mainPhoto.dataset.photo) < productImages.length) {
                 mainPhoto.dataset.photo = parseInt(mainPhoto.dataset.photo) + 1;
             } else {
@@ -157,18 +157,12 @@ mainPhoto.addEventListener('click', () => {
     lightboxPhotoContainer.appendChild(photoContainer.cloneNode(true));
 });
 
-//adjust product qty
-const decreaseQty = document.querySelector('.sub-qty');
-const increaseQty = document.querySelector('.add-qty');
-
-decreaseQty.addEventListener('click', () => {
-    const qty = document.querySelector('.qty').querySelector('.number');
+//adjust product qtyInput
+const test = document.querySelector('.qty').getElementsByTagName('IMG');
+for (let i = 0; i < test.length; i++) { test[i].addEventListener('click', () => { qtyInput(test[i].className)}); }
+function qtyInput(d) {
+    let qty = document.querySelector('.qty').querySelector('.number');
     let number = parseInt(qty.innerText)
-    if(number > 1) { qty.innerText = number - 1;  }
-});
-
-increaseQty.addEventListener('click', () => {
-    const qty = document.querySelector('.qty').querySelector('.number');
-    let number = parseInt(qty.innerText)
-    if(number <= 9) { qty.innerText = number + 1;  }
-});
+    if(number <= 9 && d == 'add') { qty.innerText = number + 1;  }
+    if(number > 1 && d == 'sub') { qty.innerText = number - 1;  }
+}
